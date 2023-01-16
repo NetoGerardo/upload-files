@@ -14,8 +14,11 @@ const fileStorage = multer.diskStorage({
 
         const { id } = req.body
 
-        const folder = `./uploads/${id}`;
+        //const folder = `./uploads/${id}`;
 
+        const folder = `../sistema-financeiro-corretora/public/assets/images/uploads/${id}`;
+
+        console.log("TESTE");
         console.log("Path - " + folder);
 
         fs.mkdirSync(folder, { recursive: true })
