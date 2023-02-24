@@ -62,6 +62,15 @@ app.post('/upload', upload.single('file'), (req, res) => {
     return res.json({ file: req.file });
 });
 
+app.get('/', upload.single('file'), (req, res) => {
+
+    let rs = {
+        "status": "OK",
+        "message": "Upload api Running!",
+    }
+
+});
+
 app.use(function (err, req, res, next) {
     if (err.code === "LIMIT_FILE_TYPES") {
         res.status(422).json({ error: "Somente imagens e PDF são permitidos" });
@@ -70,5 +79,5 @@ app.use(function (err, req, res, next) {
 })
 
 app.listen(3333, () => {
-    console.log("Started at http://localhost:3333");
+    console.log("Upload started at 3333");
 })
