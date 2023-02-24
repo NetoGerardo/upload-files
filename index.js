@@ -17,7 +17,7 @@ const fileStorage = multer.diskStorage({
         //const folder = `./uploads/${id}`;
 
         //const folder = `../sistema-financeiro-corretora/public/assets/images/uploads/${id}`;
-        
+
         const folder = `../whatsz-gerador-ce/public/assets/images/uploads/${id}`;
 
         console.log("TESTE");
@@ -64,12 +64,14 @@ app.post('/upload', upload.single('file'), (req, res) => {
     return res.json({ file: req.file });
 });
 
-app.get('/', upload.single('file'), (req, res) => {
+app.get('/', (req, res) => {
 
     let rs = {
         "status": "OK",
         "message": "Upload api Running!",
     }
+
+    return res.json(rs);
 
 });
 
