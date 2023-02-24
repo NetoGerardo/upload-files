@@ -16,7 +16,9 @@ const fileStorage = multer.diskStorage({
 
         //const folder = `./uploads/${id}`;
 
-        const folder = `../sistema-financeiro-corretora/public/assets/images/uploads/${id}`;
+        //const folder = `../sistema-financeiro-corretora/public/assets/images/uploads/${id}`;
+        
+        const folder = `../whatsz-gerador-ce/public/assets/images/uploads/${id}`;
 
         console.log("TESTE");
         console.log("Path - " + folder);
